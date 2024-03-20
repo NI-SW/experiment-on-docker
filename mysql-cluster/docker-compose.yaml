@@ -1,0 +1,47 @@
+version: "3"
+services:
+   db01:
+      image: mysql-cluster:latest
+      hostname: mysql_1
+      networks:
+         public:
+            ipv4_address: 192.168.240.2
+      env_file:
+         - ./config
+   db02:
+      image: mysql-cluster:latest
+      hostname: mysql_2
+      networks:
+         public:
+            ipv4_address: 192.168.240.3
+      env_file:
+         - ./config
+   db03:
+      image: mysql-cluster:latest
+      hostname: mysql_3
+      networks:
+         public:
+            ipv4_address: 192.168.240.4
+      env_file:
+         - ./config
+      ports:
+         - 13307:13306
+   dbrouter:
+      image: mysql-router:latest
+      hostname: mysql_router
+      tty: true
+      networks:
+         public:
+            ipv4_address: 192.168.240.5
+      ports:
+         - 13306:6446
+
+networks:
+   public:
+      ipam:
+         config:
+            - subnet: 192.168.240.0/20
+
+
+
+

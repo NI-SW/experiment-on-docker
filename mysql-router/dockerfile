@@ -1,0 +1,12 @@
+FROM centos:7
+
+COPY ./mysql80-community-release-el7-11.noarch.rpm    /root/
+COPY ./router.sh                                      /root/router.example.sh
+
+RUN rpm -ivh /root/mysql80-community-release-el7-11.noarch.rpm; \
+yum-config-manager --enable mysql-innovation-community; \
+yum-config-manager --enable mysql-tools-innovation-community; \
+yum install -y epel-release mysql-router; \
+rm -rf /root/mysql80-community-release-el7-11.noarch.rpm;
+
+ENTRYPOINT ["/bin/bash"]

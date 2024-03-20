@@ -1,0 +1,30 @@
+FROM centos:7
+
+COPY ./mysql-yum/mysql80-community-release-el7-11.noarch.rpm    /root/
+COPY ./sysfile/start.sh                                         /root/start.sh
+COPY ./packages/*.rpm                                           /root/
+COPY ./sysfile/sys.sh                                           /root/clear.sh
+COPY ./envcfg/*                                                 /root/
+RUN yum install -y epel-release; \
+useradd mysql;\
+rpm -ivh /root/mysql80-community-release-el7-11.noarch.rpm; \
+yum-config-manager --enable mysql-innovation-community; \
+yum-config-manager --enable mysql-tools-innovation-community; \
+chmod 755 /root/start.sh; \
+chmod 755 /root/clear.sh; \
+/root/start.sh; \
+/root/clear.sh;
+
+ENTRYPOINT [ "/bin/sh", "-c", "/root/strsys.sh"]
+
+
+
+
+
+
+
+
+
+
+
+
