@@ -6,6 +6,7 @@ startup example:
 command:
 
 {
+
   cd mysql-cluster
   
   docker build -t mysql-cluster:latest .
@@ -23,6 +24,7 @@ MYCLUSTER_NAME=yourclustername' > config
   docker-compose up -d
   
 }
+
 config mysql cluster:
 
   in mysql database node:
