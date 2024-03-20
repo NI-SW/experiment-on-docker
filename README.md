@@ -1,4 +1,4 @@
-# mysql-docker-exp
+# mysql-cluster-experiment
 A simple mysql innodb cluster in docker, build for experiment XD
 
 startup example:
