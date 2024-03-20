@@ -1,5 +1,5 @@
 # mysql-docker-exp
-An simple mysql innodb cluster in docker, build for experiment XD
+A simple mysql innodb cluster in docker, build for experiment XD
 
 startup example:
 
