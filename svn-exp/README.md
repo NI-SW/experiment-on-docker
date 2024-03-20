@@ -16,6 +16,7 @@ For example:
         docker-compose up -d
 
 You can access your svn repositories at: svn://127.0.0.1:53690/ or at svn://{hostip}:53690/
+
 After you startup your svn server once, ./data will be configure by svn server, remove ./config to avoid reinitialize.
 
 
