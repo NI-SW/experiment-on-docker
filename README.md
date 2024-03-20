@@ -1,5 +1,5 @@
 # mysql-docker-exp
-An simple mysql innodb cluster in docker, build for experiment XD
+A simple mysql innodb cluster in docker, build for experiment XD
 
 startup example:
 
@@ -29,10 +29,10 @@ config mysql cluster:
 
     command: "mysqlsh -u root -p" 
     
-    and see /root/example.clustercfg
+    then see /root/example.clustercfg
     
     when an output like: "Do you want to restart the instance after configuring it? [y/n]:"
     
-    input "n"
+    input: "n"
     
-    and then use "/root/restartmysql.sh" to restart mysql manually
+    and use command: "/root/restartmysql.sh" to restart mysql manually
