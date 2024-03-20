@@ -1,0 +1,10 @@
+FROM centos:7
+
+
+COPY ./start.sh /root/start.sh
+
+
+RUN yum -y install subversion;
+
+
+ENTRYPOINT [ "/bin/sh", "-c", "/root/start.sh" ]

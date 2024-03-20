@@ -1,0 +1,12 @@
+version: '3'
+services:
+  svn:
+    image: mysvn:latest
+    hostname: svn
+    env_file:
+      - ./config
+    volumes:
+      - ./data:/data
+    ports:
+      - 53690:3690
+    
