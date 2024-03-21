@@ -8,6 +8,8 @@ services:
             ipv4_address: 192.168.240.2
       env_file:
          - ./config
+      volumes:
+         - /data1:/data
    db02:
       image: mysql-cluster:latest
       hostname: mysql_2
@@ -16,6 +18,8 @@ services:
             ipv4_address: 192.168.240.3
       env_file:
          - ./config
+      volumes:
+         - /data2:/data
    db03:
       image: mysql-cluster:latest
       hostname: mysql_3
@@ -26,6 +30,8 @@ services:
          - ./config
       ports:
          - 13307:13306
+      volumes:
+         - /data3:/data
    dbrouter:
       image: mysql-router:latest
       hostname: mysql_router

@@ -5,25 +5,31 @@ startup example:
 
 command:
 
-    cd mysql-cluster
+    su - root
+
+    mkdir /data1 /data2 /data3
+
+    chmod 755 /data1 /data2 /data3
+
+    cd /path/to/mysql-cluster
     
     docker build -t mysql-cluster:latest .
     
-    cd mysql-router
+    cd /path/to/mysql-router
     
     docker build -t mysql-router:latest .
     
-    cd mysql-cluster
+    cd /path/to/mysql-cluster
     
-    echo 'MYSQL_PASSWD=yourpassword
+    echo 'MYSQL_PASSWD={yourpassword}
     
-    MYCLUSTER_NAME=yourclustername' > config
+    MYCLUSTER_NAME={yourclustername}' > config
   
     docker-compose up -d
     
     docker ps
   
-    docker exec -it --user root <CONTAINER ID> /bin/bash
+    docker exec -it --user root {CONTAINER ID} /bin/bash
 
 config mysql cluster:
 

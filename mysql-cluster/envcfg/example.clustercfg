@@ -9,7 +9,9 @@ c.addInstance('root@mysql_1:13306')
 c.addInstance('root@mysql_2:13306')
 c.addInstance('root@mysql_3:13306')
 
+reboot:
 
+    var c = dba.rebootClusterFromCompleteOutage()
 
 
 
